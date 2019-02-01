@@ -12,6 +12,22 @@
   <body>
     <h3>My Google Maps Demo</h3>
     <!--The div element for the map -->
+
+    <input name="filename" id="filename" type="text">
+
+	<button onclick="myFunction()">Click me</button>
+
+
+	<p id="demo"></p>
+
+	<script>
+	function myFunction() {
+	  document.getElementById("mapImage").src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyCZTfkaSU8xs1MLCks-X5Zx0xn_RnemtHk&q=" + document.getElementById('filename').value;
+	  document.getElementById("demo").innerHTML = document.getElementById("mapImage").src;
+
+	  // document.getElementById("mapImage").src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyCZTfkaSU8xs1MLCks-X5Zx0xn_RnemtHk&q=や満登";
+	}
+	</script>
     <div id="map"></div>
     <script>
 // Initialize and add the map
@@ -30,8 +46,11 @@ function initMap() {
     * The key parameter will contain your own API key (which is not needed for this tutorial)
     * The callback parameter executes the initMap() function
     -->
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkkJwA5OQPNHwO9cBJOaBIeVxyYiosz5g&callback=initMap">
-    </script>
+	<iframe id="mapImage"
+	  width="600"
+	  height="450"
+	  frameborder="0" style="border:0"
+	  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCZTfkaSU8xs1MLCks-X5Zx0xn_RnemtHk&q=Tokyo" allowfullscreen>
+	</iframe>
   </body>
 </html>
